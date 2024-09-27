@@ -1,7 +1,14 @@
 export default function Button(props) { 
-  console.log(props); //{text:"카페"} 객체형태를 가짐
+  //console.log(props); //{text:"카페"} 객체형태를 가짐
+
+  // const onMouseBtn = () => {
+  //   console.log(`${props.text} 버튼을 스쳤다 `)
+  // }
   return (
-    <button style={{ color: props.color }}> 
+    <button
+      onClick={() => { console.log(props.text) }}
+      //onMouseEnter={onMouseBtn}
+      style={{ color: props.color }}> 
       {props.text} {props.color?.toUpperCase()}
       {props.children}
     </button>
