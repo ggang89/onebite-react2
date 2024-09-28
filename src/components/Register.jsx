@@ -4,42 +4,55 @@ import { useState } from "react";
 //1. 이름 2. 생년월일  3.국적  4.자기소개
 
 export default function Register() {
-  const [name, setName] = useState("이름");
-  const [birth, setBirth] = useState("");
-  const [live, setLive] = useState("");
-  const [intro, setIntro] =useState("😀")
+  //=> 하나의 객체에 넣기
+  const [input, setInput] = useState({
+    name: "",
+    birth: "",
+    live: "",
+    intro: "",
+  });
 
   const onChangeName = (e) => {
-    setName(e.target.value);
+    setInput({
+      ...input,
+      name: e.target.value,
+    });
   };
   const onchangeBirth = (e) => {
-    setBirth(e.target.value);
+    setInput({
+      ...input,
+      birth: e.target.value,
+    });
   };
   const onChangeLive = (e) => {
-    setLive(e.target.value);
+    setInput({
+      ...input,
+      live: e.target.value,
+    });
   };
   const onChangeIntro = (e) => {
-    setIntro(e.target.value);
-  }
+    setInput({
+      ...input,
+      intro: e.target.value,
+    });
+  };
   return (
     <>
       <div>
-        <input value={name} onChange={onChangeName} />
+        <input value={input.name} onChange={onChangeName} />
       </div>
       <div>
-        <input type="date" value={birth} onChange={onchangeBirth} />
+        <input type="date" value={input.birth} onChange={onchangeBirth} />
       </div>
       <div>
-        <select value={live} onChange={onChangeLive}>
+        <select value={input.live} onChange={onChangeLive}>
           <option value="kr">한국</option>
           <option value="earth">지구</option>
           <option value="galaxy">우리은하</option>
         </select>
-        {live}
       </div>
       <div>
-        <textarea value={intro} onChange={onChangeIntro}/>
-        {intro}
+        <textarea value={input.intro} onChange={onChangeIntro} />
       </div>
     </>
   );
