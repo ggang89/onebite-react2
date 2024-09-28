@@ -11,48 +11,32 @@ export default function Register() {
     live: "",
     intro: "",
   });
-
-  const onChangeName = (e) => {
+  const onChange = (e) => {
     setInput({
       ...input,
-      name: e.target.value,
-    });
-  };
-  const onchangeBirth = (e) => {
-    setInput({
-      ...input,
-      birth: e.target.value,
-    });
-  };
-  const onChangeLive = (e) => {
-    setInput({
-      ...input,
-      live: e.target.value,
-    });
-  };
-  const onChangeIntro = (e) => {
-    setInput({
-      ...input,
-      intro: e.target.value,
-    });
-  };
+      [e.target.name]:e.target.value,
+    })
+   };
+  
+  
+  
   return (
     <>
       <div>
-        <input value={input.name} onChange={onChangeName} />
+        <input name="name" value={input.name} onChange={onChange} />
       </div>
       <div>
-        <input type="date" value={input.birth} onChange={onchangeBirth} />
+        <input name="birth" type="date" value={input.birth} onChange={onChange} />
       </div>
       <div>
-        <select value={input.live} onChange={onChangeLive}>
+        <select name="live" value={input.live} onChange={onChange}>
           <option value="kr">한국</option>
           <option value="earth">지구</option>
           <option value="galaxy">우리은하</option>
         </select>
       </div>
       <div>
-        <textarea value={input.intro} onChange={onChangeIntro} />
+        <textarea name="intro" value={input.intro} onChange={onChange} />
       </div>
     </>
   );
