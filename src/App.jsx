@@ -1,12 +1,14 @@
+import CounterApp from "./counterApp/CounterApp";
 
-import HookExam from "./components/HookExam";
+
+
 
 
 function App() {
 
   return (
     <> 
-      <HookExam/>
+      <CounterApp/>
     </>
   );
 }
