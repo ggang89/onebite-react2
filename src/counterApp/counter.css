@@ -1,14 +1,28 @@
-body{
+body {
   padding: 20px;
 }
-.App{
+.App {
   margin: 0 auto;
   width: 400px;
 }
 .App > section {
   background-color: rgb(245, 245, 245);
-  border :1px solid rgb(240, 240, 240);
-  border-radius:5px;
-  padding:20px;
-  margin-bottom:10px;
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.App > h1 {
+  text-align: center;
+}
+.btnBox {
+  display: flex;
+  justify-content: space-around;
+}
+.btnBox > button {
+  padding: 6px 12px;
+  border: none;
+  background: black;
+  color: white;
+  font-weight: 600;
 }

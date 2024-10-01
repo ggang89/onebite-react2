@@ -1,6 +1,7 @@
+import "./counter.css"
 export default function Controller({ ClickBtn }) {
   return (
-    <>
+    <div className="btnBox">
       <button
         onClick={() => {
           ClickBtn(-1);
@@ -43,6 +44,6 @@ export default function Controller({ ClickBtn }) {
       >
         +1
       </button>
-    </>
+    </div>
   );
 }
